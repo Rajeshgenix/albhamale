@@ -35,7 +35,7 @@ export default function Maclogin()  {
       /** Requested scopes, seperated by spaces - eg: 'email name' */
       scope: 'email name',
       /** Apple's redirectURI - must be one of the URIs you added to the serviceID - the undocumented trick in apple docs is that you should call auth from a page that is listed as a redirectURI, localhost fails */
-      redirectURI: 'https://j4sh56-3000.csb.app/',
+      redirectURI: 'https://albhamale.netlify.app/',
       /** State string that is returned with the apple response */
       state: 'orgin:web',
       /** Nonce */
