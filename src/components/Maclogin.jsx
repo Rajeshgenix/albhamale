@@ -14,9 +14,37 @@ export default function Maclogin() {
   const [appleData, setappleData] = useState({})
 
 
-  const responseapple = (response) => {
+  const responseapple = async(response) => {
 
     console.log(response);
+
+
+    const postresponse  =   await axios({
+      method: "Post",
+       url:  "https://localhost:7296/Movie/Addprofile",
+       data: {
+          givenName: response.user.email,
+          email: response.user.name,
+          provider:"apple"
+        },
+      config: {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      },
+    })
+      .then((response) => {
+         console.log(response.data);
+         if(response.data ="Profilecreated"){
+          alert("success");
+          navigate('/Home');
+         }
+      })
+      .catch((error) => {
+        console.log("the error has occured: " + error);
+      });
+
   };
 
 
@@ -43,7 +71,7 @@ export default function Maclogin() {
 
           usePopup: true,
           responseMode: "query",
-          // callback: { responseapple }
+          
         }}
         uiType="dark"
 

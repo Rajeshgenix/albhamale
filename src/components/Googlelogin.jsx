@@ -53,12 +53,6 @@ export default function GoogleLogin(props) {
             .catch((error) => {
               console.log("the error has occured: " + error);
             });
-
-        
-
-         
-
-           
       
     };
 
