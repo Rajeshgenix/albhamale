@@ -6,11 +6,13 @@ import AppleIcon from '@mui/icons-material/Apple';
 import { IconButton } from '@mui/material';
 
 import './socialiconstyle.css'
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function Maclogin() {
-
+  const navigate = useNavigate();
   const [appleData, setappleData] = useState({})
 
 
