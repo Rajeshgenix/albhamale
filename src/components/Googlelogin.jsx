@@ -75,10 +75,6 @@ export default function GoogleLogin(props) {
         onFailure={onResponse}
         cookiePolicy={"single_host_origin"}
         render={(renderProps) => (
-            // <div className="login-social-item login-social-item--google">
-            //   <img onClick={renderProps.onClick}  className="login-social-item__image" src={'https://findicons.com/files/icons/2830/clean_social_icons/250/google.png'} alt=""/>
-            // </div>
-
              <div className="login-social-item login-social-item--google">
             <IconButton onClick={renderProps.onClick} className="login-social-item__image" sx={{ color: "white" }}>
             <GoogleIcon/>

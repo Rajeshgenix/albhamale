@@ -35,7 +35,7 @@ export default function Maclogin()  {
       /** Requested scopes, seperated by spaces - eg: 'email name' */
       scope: 'email name',
       /** Apple's redirectURI - must be one of the URIs you added to the serviceID - the undocumented trick in apple docs is that you should call auth from a page that is listed as a redirectURI, localhost fails */
-      redirectURI: 'https://example-app.com/',
+      redirectURI: 'https://j4sh56-3000.csb.app/',
       /** State string that is returned with the apple response */
       state: 'orgin:web',
       /** Nonce */
@@ -62,8 +62,16 @@ export default function Maclogin()  {
     skipScript={false} // default = undefined
     /** Apple image props */
     iconProp={{ style: { marginTop: '10px' } }} // default = undefined
-    /** render function - called with all props - can be used to fully customize the UI by rendering your own component  */
-    render={(props) => <button {...props}>My Custom Button</button>}
+   
+    //  render={(props) => <button {...props}>My Custom Button</button>}
+
+    render={(renderProps) => (
+      <div className="login-social-item login-social-item--apple">
+     <IconButton onClick={renderProps.onClick} className="login-social-item__image" sx={{ color: "white" }}>
+     <AppleIcon/>
+    </IconButton>
+     </div>
+   )}
   />
      
     
