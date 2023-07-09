@@ -18,34 +18,35 @@ export default function Maclogin() {
 
   const responseapple = async(response) => {
 
-    console.log(response);
+    console.log("email" +response.email);
+    console.log("name" +response.name);
 
 
-    const postresponse  =   await axios({
-      method: "Post",
-       url:  "https://localhost:7296/Movie/Addprofile",
-       data: {
-          givenName: response.user.email,
-          email: response.user.name,
-          provider:"apple"
-        },
-      config: {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      },
-    })
-      .then((response) => {
-         console.log(response.data);
-         if(response.data ="Profilecreated"){
-          alert("success");
-          navigate('/Home');
-         }
-      })
-      .catch((error) => {
-        console.log("the error has occured: " + error);
-      });
+    // const postresponse  =   await axios({
+    //   method: "Post",
+    //    url:  "https://localhost:7296/Movie/Addprofile",
+    //    data: {
+    //       givenName: response.user.email,
+    //       email: response.user.name,
+    //       provider:"apple"
+    //     },
+    //   config: {
+    //     headers: {
+    //       Accept: "application/json",
+    //       "Content-Type": "application/json",
+    //     },
+    //   },
+    // })
+    //   .then((response) => {
+    //      console.log(response.data);
+    //      if(response.data ="Profilecreated"){
+    //       alert("success");
+    //       navigate('/Home');
+    //      }
+    //   })
+    //   .catch((error) => {
+    //     console.log("the error has occured: " + error);
+    //   });
 
   };
 
