@@ -20,8 +20,8 @@ export default function Maclogin() {
 
 
     console.log("appleresponse" +response);
-    console.log("email" +response.user.email);
-    console.log("name" +response.user.name);
+    // console.log("email" +response.user.email);
+    // console.log("name" +response.user.name);
 
 
     // const postresponse  =   await axios({
