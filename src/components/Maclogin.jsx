@@ -14,7 +14,7 @@ export default function Maclogin() {
 
   const responseapple = async(response) => {
 
-    if(response.user.length>0){
+    if(response.user.email.length>0){
     console.log(response.user.email);
     console.log(response.user.name.firstName);
 
