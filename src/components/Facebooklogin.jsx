@@ -2,12 +2,12 @@
 
 import React, { useEffect,useState } from "react";
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
-import './socialiconstyle.css'
+// import './socialiconstyle.css'
 
-import FacebookIcon from '@mui/icons-material/Facebook';
-import { IconButton } from '@mui/material';
+// import FacebookIcon from '@mui/icons-material/Facebook';
 
-import Facebook from "../img/facebook.png";
+
+import FacebookIcon from "../img/fbicon.png"
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
@@ -29,7 +29,7 @@ export default function Facebooklogin(props) {
       
     // });
 
-    
+    if(response.email.length>0){
     
     const postresponse  =   await axios({
         method: "Post",
@@ -56,6 +56,10 @@ export default function Facebooklogin(props) {
         .catch((error) => {
           console.log("the error has occured: " + error);
         });
+      }
+      else{
+        alert("invalid response");
+      }
 
 };
 
@@ -68,14 +72,7 @@ export default function Facebooklogin(props) {
           fields="name, email, picture"
           callback={ResponseFacebook}
           render={(renderProps) => (
-            // <div className="login-social-item login-social-item--facebook">
-            //   <img onClick={renderProps.onClick}  className="login-social-item__image" src={Facebook} alt=""/>
-            // </div>
-           <div className="login-social-item login-social-item--facebook">
-            <IconButton onClick={renderProps.onClick} className="login-social-item__image" >
-            <FacebookIcon sx={{color: "white" }}/>
-           </IconButton>
-           </div>
+          <img className="icon"src={FacebookIcon} onClick={renderProps.onClick}/> 
           )}
           
       />

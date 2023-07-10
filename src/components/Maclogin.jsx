@@ -1,11 +1,7 @@
 import AppleSignin from 'react-apple-signin-auth';
 import React, { useEffect, useState } from "react";
+import AppleIcon from "../img/appleicon.png";
 
-
-import AppleIcon from '@mui/icons-material/Apple';
-import { IconButton } from '@mui/material';
-
-import './socialiconstyle.css'
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
@@ -18,15 +14,13 @@ export default function Maclogin() {
 
   const responseapple = async(response) => {
 
-
+    if(response.user.length>0){
     console.log(response.user.email);
     console.log(response.user.name.firstName);
 
-
+    }
    
-    // console.log("email" +response.user.email);
-    // console.log("name" +response.user.name);
-
+    
 
     // const postresponse  =   await axios({
     //   method: "Post",
@@ -105,16 +99,9 @@ export default function Maclogin() {
 
 
         render={(renderProps) => (
-          <div className="login-social-item login-social-item--apple">
-            <IconButton onClick={renderProps.onClick} className="login-social-item__image" sx={{ color: "white" }}>
-              <AppleIcon />
-            </IconButton>
-          </div>
+          <img className="icon"src={AppleIcon} onClick={renderProps.onClick}/>
         )}
       />
-
-
-
 
 
     </div>

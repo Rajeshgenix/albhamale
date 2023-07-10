@@ -1,0 +1,70 @@
+#logo1 {
+  background: url("../img/sidebarlogo.png") no-repeat;
+  background-size: cover;
+}
+
+#logo1 img {
+  object-fit: auto;
+
+}
+
+.form-control::-moz-placeholder {
+  color: #008752 !important;
+
+}
+
+.d-flex label {
+  margin-left: 10px;
+}
+
+#loginBtn {
+  background-color: #004799;
+  color: #fff;
+}
+
+
+#page1 a {
+  color: #0D6EFD;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+#page1 a:hover {
+  color: #3b56f0;
+}
+
+label {
+  font-family: 'poppins';
+  font-weight: 500;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+}
+
+.separator span {
+  padding: 5%;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #000;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em; 
+}
+
+.icon {
+  width: 53px;
+  height: 53px;
+}

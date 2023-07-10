@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   height: 50px;
   background-color: rgba(102, 16, 83, 0.698);
   color: white;
@@ -242,4 +242,8 @@ input{
     height: 0.5px;
     width: 300px;
   }
-}
+} */
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');

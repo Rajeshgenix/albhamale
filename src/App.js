@@ -15,6 +15,8 @@ import Container from '@material-ui/core/Container';
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Post from "./components/Post";
+import Signin from "./components/Signin";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -106,7 +108,8 @@ function App() {
         </Routes> */}
 
 <Routes>
-<Route path="/" element={<Login />} />
+<Route path="/" element={<Signin />} />
+{/* <Route path="/" element={<Login />} /> */}
 <Route path="/Home" element={<Home />} />
 <Route path="/Post" element={<Post />} />
 

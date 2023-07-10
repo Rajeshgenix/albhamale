@@ -1,13 +1,15 @@
 import React, { useEffect,useState } from "react";
 import ReactGoogleLogin from "react-google-login";
-import GoogleButton from 'react-google-button'
-import './socialiconstyle.css'
+// import './socialiconstyle.css'
 
-import GoogleIcon from '@mui/icons-material/Google';
-import { IconButton } from '@mui/material';
 import {gapi} from 'gapi-script';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import GoogleIcon from "../img/googleicon.png";
+
+
+//  import GoogleIcon from '@mui/icons-material/Google';
+
 
 export default function GoogleLogin(props) {
     const navigate = useNavigate();
@@ -22,12 +24,12 @@ export default function GoogleLogin(props) {
         })
     },[])
 
-
    
-
 
     const onResponse = async  (resp) => {
         console.log(resp);
+
+        if(resp.profileObj.email.length>0){
         const postresponse  =   await axios({
             method: "Post",
              url:  "https://localhost:7296/Movie/Addprofile",
@@ -53,6 +55,10 @@ export default function GoogleLogin(props) {
             .catch((error) => {
               console.log("the error has occured: " + error);
             });
+          }
+          else{
+            alert("invalid response");
+          }
       
     };
 
@@ -69,10 +75,8 @@ export default function GoogleLogin(props) {
         onFailure={onResponse}
         cookiePolicy={"single_host_origin"}
         render={(renderProps) => (
-             <div className="login-social-item login-social-item--google">
-            <IconButton onClick={renderProps.onClick} className="login-social-item__image" sx={{ color: "white" }}>
-            <GoogleIcon/>
-           </IconButton>
+             <div>
+              <img className="icon"src={GoogleIcon} onClick={renderProps.onClick}/> 
             </div>
           )}
     
