@@ -20,6 +20,10 @@ export default function Maclogin() {
 
 
     console.log(response.user.email);
+    console.log(response.user.name.firstName);
+
+
+   
     // console.log("email" +response.user.email);
     // console.log("name" +response.user.name);
 
