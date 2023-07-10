@@ -19,7 +19,7 @@ export default function Maclogin() {
   const responseapple = async(response) => {
 
 
-    console.log(response.user);
+    console.log(response.user.email);
     // console.log("email" +response.user.email);
     // console.log("name" +response.user.name);
 
