@@ -93,7 +93,7 @@ export default function Maclogin() {
     //     console.log("the error has occured: " + error);
     //   });
 
-  };
+  
 
 
 
