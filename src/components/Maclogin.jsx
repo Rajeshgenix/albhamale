@@ -24,6 +24,47 @@ export default function Maclogin() {
 
     
     console.log(response);
+
+
+
+
+    const postresponse  =   await axios({
+      method: "Post",
+       
+       url:"https://localhost:7071/api/Account/SocialSignin",
+       data: {
+          UserName:response.user.email,
+          Email: response.user.email,
+          Password:"",
+          FirstName:response.user.name.firstName,
+          LastName:response.user.name.lastName,
+
+
+        },
+      config: {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      },
+    })
+      .then((response) => {
+       
+         console.log(response.data);
+         if(response.data.statusCode=200){
+         
+         alert("API call success")
+         }
+         else{
+          alert(response.data.message);
+          alert("API call error")
+         }
+      })
+      .catch((error) => {
+        alert("API call catch")
+        console.log("the error has occured: " + error);
+      });
+    }
     
 
     // const postresponse  =   await axios({
