@@ -21,6 +21,10 @@ export default function Facebooklogin(props) {
     const [facebookprofile, setfacebookprofile] = useState({})
 
 
+    const onerrorFailure= (resp)=>{
+      alert("error")
+     }
+
     const ResponseFacebook = async(response) => {
     //     setfacebookprofile({
     //       givenName: response.name,
@@ -28,7 +32,13 @@ export default function Facebooklogin(props) {
     //       provider:"facebook"
       
     // });
+    console.log(response);
 
+    if(response.status == "unknown"){
+alert("window is closed")
+
+    }
+else {
     if(response.email.length>0){
     
     const postresponse  =   await axios({
@@ -57,9 +67,11 @@ export default function Facebooklogin(props) {
           console.log("the error has occured: " + error);
         });
       }
-      else{
-        alert("invalid response");
-      }
+
+    }
+      // else{
+      //   alert("invalid response");
+      // }
 
 };
 
@@ -71,6 +83,16 @@ export default function Facebooklogin(props) {
           autoLoad={true}
           fields="name, email, picture"
           callback={ResponseFacebook}
+
+          // onSuccess={ResponseFacebook => {
+          //   console.log(ResponseFacebook);
+          // }}
+
+          // onError={() => {
+          //   console.log('Login Failed');
+          // }}
+
+          onError={onerrorFailure}
           render={(renderProps) => (
           <img className="icon"src={FacebookIcon} onClick={renderProps.onClick}/> 
           )}

@@ -24,7 +24,9 @@ export default function GoogleLogin(props) {
         })
     },[])
 
-   
+   const onerrorFailure= (resp)=>{
+    alert("on error window closed")
+   }
 
     const onResponse = async  (resp) => {
         console.log(resp);
@@ -72,7 +74,7 @@ export default function GoogleLogin(props) {
         clientId={clientId}
        
         onSuccess={onResponse}
-        onFailure={onResponse}
+        onFailure={onerrorFailure}
         cookiePolicy={"single_host_origin"}
         render={(renderProps) => (
              <div>

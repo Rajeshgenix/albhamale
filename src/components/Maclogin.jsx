@@ -12,14 +12,18 @@ export default function Maclogin() {
   const [appleData, setappleData] = useState({})
 
 
+  const onerrorFailure= (resp)=>{
+    alert("on error window closed")
+   }
+
   const responseapple = async(response) => {
 
     
-    console.log(response.user.email);
-    console.log(response.user.name.firstName);
+    // console.log(response.user.email);
+    // console.log(response.user.name.firstName);
 
     
-   
+    console.log(response);
     
 
     // const postresponse  =   await axios({
@@ -90,7 +94,7 @@ export default function Maclogin() {
 
         onSuccess={responseapple}
 
-        onError={responseapple}
+        onError={onerrorFailure}
 
         skipScript={false}
 
